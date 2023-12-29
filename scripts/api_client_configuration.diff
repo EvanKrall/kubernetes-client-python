@@ -1,0 +1,13 @@
+diff --git a/kubernetes/client/api_client.py b/kubernetes/client/api_client.py
+index 72eda9860..2d338e828 100644
+--- a/kubernetes/client/api_client.py
++++ b/kubernetes/client/api_client.py
+@@ -629,7 +629,7 @@ class ApiClient(object):
+                                                    'get_real_child_model'):
+             return data
+ 
+-        kwargs = {}
++        kwargs = {"local_vars_configuration": self.configuration}
+         if (data is not None and
+                 klass.openapi_types is not None and
+                 isinstance(data, (list, dict))):
